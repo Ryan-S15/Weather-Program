@@ -3,16 +3,9 @@
 #include <limits>
 using namespace std;
 
-// Function to calculate wind chill
-double calculateWindChill(double temp, double windSpeed) {
-    return 35.74 + (0.6215 * temp) - (35.75 * pow(windSpeed, 0.16))
-           + (0.4275 * temp * pow(windSpeed, 0.16));
-}
-
-// Function to calculate cloud base
-double calculateCloudBase(double temp, double dewPoint) {
-    return ((temp - dewPoint) / 4.4) * 1000;
-}
+// Function prototypes (declarations)
+double calculateWindChill(double temp, double windSpeed);
+double calculateCloudBase(double temp, double dewPoint);
 
 int main() {
     double temperature, windSpeed, dewPoint;
@@ -66,4 +59,15 @@ int main() {
     cout << "Estimated Cloud Base: " << cloudBase << " feet" << endl;
 
     return 0;
+}
+
+// Function definitions
+
+double calculateWindChill(double temp, double windSpeed) {
+    return 35.74 + (0.6215 * temp) - (35.75 * pow(windSpeed, 0.16))
+           + (0.4275 * temp * pow(windSpeed, 0.16));
+}
+
+double calculateCloudBase(double temp, double dewPoint) {
+    return ((temp - dewPoint) / 4.4) * 1000;
 }
