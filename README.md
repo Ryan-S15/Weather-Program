@@ -3,11 +3,14 @@
 using namespace std;
 
 // Function prototypes
-void programIntro();
-void getInput(double &temperature, double &windSpeed, double &dewPoint);
-void calculateValues(double temperature, double windSpeed, double dewPoint,
+void programIntro(); // Function used to display my program intro 
+
+void getInput(double &temperature, double &windSpeed, double &dewPoint); // Function used to gather temp, wind speed, and dew point input from the user. 
+
+void calculateValues(double temperature, double windSpeed, double dewPoint, // function used to claculate the wind chill and cloud base
                      double &windChill, double &cloudBase);
-void displayOutput(double windChill, double cloudBase);
+                     
+void displayOutput(double windChill, double cloudBase); // function used to display the cloud base and wind chill to the user
 
 int main() {
     double temperature, windSpeed, dewPoint;
