@@ -38,11 +38,11 @@ void programIntro() {
 void getInput(double &temperature, double &windSpeed, double &dewPoint) {
 
     while (true) {
-        cout << "Enter temperature (F): ";
+        cout << "Enter temperature (F): "; // gets temperature input from user
         cin >> temperature;
 
         if (cin.fail()) {
-            cout << "Invalid input. Please enter a number.\n";
+            cout << "Invalid input. Please enter a number.\n"; //checks for invalid anwsers 
             cin.clear();
             cin.ignore(1000, '\n');
         } else {
@@ -51,11 +51,11 @@ void getInput(double &temperature, double &windSpeed, double &dewPoint) {
     }
 
     while (true) {
-        cout << "Enter wind speed (mph): ";
+        cout << "Enter wind speed (mph): "; // gets input for wind speed from user
         cin >> windSpeed;
 
         if (cin.fail()) {
-            cout << "Invalid input. Please enter a number.\n";
+            cout << "Invalid input. Please enter a number.\n"; //checks for invalid anwsers 
             cin.clear();
             cin.ignore(1000, '\n');
         } else {
@@ -64,11 +64,11 @@ void getInput(double &temperature, double &windSpeed, double &dewPoint) {
     }
 
     while (true) {
-        cout << "Enter dew point (F): ";
+        cout << "Enter dew point (F): "; // gets dew point input from user
         cin >> dewPoint;
 
         if (cin.fail()) {
-            cout << "Invalid input. Please enter a number.\n";
+            cout << "Invalid input. Please enter a number.\n"; //checks for invalid anwsers 
             cin.clear();
             cin.ignore(1000, '\n');
         } else {
@@ -77,7 +77,7 @@ void getInput(double &temperature, double &windSpeed, double &dewPoint) {
     }
 }
 
-void calculateValues(double temperature, double windSpeed, double dewPoint,
+void calculateValues(double temperature, double windSpeed, double dewPoint, // proper calculations for wind chill and cloud basse
                      double &windChill, double &cloudBase) {
 
     windChill = 35.74 + (0.6215 * temperature)
