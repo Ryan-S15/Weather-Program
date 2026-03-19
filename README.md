@@ -87,7 +87,7 @@ void calculateValues(double temperature, double windSpeed, double dewPoint, // p
     cloudBase = ((temperature - dewPoint) / 4.4) * 1000;
 }
 
-void displayOutput(double windChill, double cloudBase) {
+void displayOutput(double windChill, double cloudBase) { // Displays the final wind chill and cloud base to the user
 
     cout << "\nResults:\n";
     cout << "Wind Chill: " << windChill << " F" << endl;
