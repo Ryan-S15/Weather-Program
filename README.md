@@ -7,31 +7,32 @@ void programIntro(); // Function used to display my program intro
 
 void getInput(double &temperature, double &windSpeed, double &dewPoint); // Function used to gather temp, wind speed, and dew point input from the user. 
 
-void calculateValues(double temperature, double windSpeed, double dewPoint, // function used to claculate the wind chill and cloud base
+void calculateValues(double &temperature, double &windSpeed, double &dewPoint, // function used to claculate the wind chill and cloud base
                      double &windChill, double &cloudBase);
                      
-void displayOutput(double windChill, double cloudBase); // function used to display the cloud base and wind chill to the user
+void displayOutput(double &windChill, double &cloudBase); // function used to display the cloud base and wind chill to the user
 
 int main() {
-    double temperature, windSpeed, dewPoint;
-    double windChill, cloudBase;
+    double &temperature, &windSpeed, &dewPoint; // declartions of all variables used in code
+    double &windChill, &cloudBase;
 
-    programIntro();
+    programIntro(); // text box intro to my program
 
-    getInput(temperature, windSpeed, dewPoint);
+    getInput(temperature, windSpeed, dewPoint); // gets temperature, windspeed, and dew point and stores them for calculations
 
-    calculateValues(temperature, windSpeed, dewPoint, windChill, cloudBase);
+    calculateValues(temperature, windSpeed, dewPoint, windChill, cloudBase); // Calculates windchill and cloud base using stored variables from earlier
 
-    displayOutput(windChill, cloudBase);
+    displayOutput(windChill, cloudBase); // displays the final cloud base and wind chill from the calculations
 
     return 0;
 }
 
 // Function definitions
 
+// Text used to describe what the program does and what the user will be doing
 void programIntro() {
     cout << "Weather Calculator Program\n";
-    cout << "This program calculates wind chill and estimated cloud base.\n";
+    cout << "This program calculates wind chill and estimated cloud base.\n";  
     cout << "You will enter temperature, wind speed, and dew point.\n\n";
 }
 
@@ -77,7 +78,7 @@ void getInput(double &temperature, double &windSpeed, double &dewPoint) {
     }
 }
 
-void calculateValues(double temperature, double windSpeed, double dewPoint, // proper calculations for wind chill and cloud basse
+void calculateValues(double &temperature, double &windSpeed, double &dewPoint, // proper calculations for wind chill and cloud basse
                      double &windChill, double &cloudBase) {
 
     windChill = 35.74 + (0.6215 * temperature)
@@ -87,7 +88,7 @@ void calculateValues(double temperature, double windSpeed, double dewPoint, // p
     cloudBase = ((temperature - dewPoint) / 4.4) * 1000;
 }
 
-void displayOutput(double windChill, double cloudBase) { // Displays the final wind chill and cloud base to the user
+void displayOutput(double &windChill, double &cloudBase) { // Displays the final wind chill and cloud base to the user
 
     cout << "\nResults:\n";
     cout << "Wind Chill: " << windChill << " F" << endl;
