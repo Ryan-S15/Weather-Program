@@ -13,8 +13,8 @@ void calculateValues(double &temperature, double &windSpeed, double &dewPoint, /
 void displayOutput(double &windChill, double &cloudBase); // function used to display the cloud base and wind chill to the user
 
 int main() {
-    double &temperature, &windSpeed, &dewPoint; // declartions of all variables used in code
-    double &windChill, &cloudBase;
+    double temperature, windSpeed, dewPoint; // declartions of all variables used in code
+    double windChill, cloudBase;
 
     programIntro(); // text box intro to my program
 
